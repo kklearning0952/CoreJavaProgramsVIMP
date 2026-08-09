@@ -1,4 +1,4 @@
-package com.practice.string;
+package main.java.com.interview.strings;
 
 public class Welcome {
     public static void main(String[] args) {
