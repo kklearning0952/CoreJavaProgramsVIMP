@@ -19,8 +19,7 @@ public class P01_FindDistinctElements {
         System.out.println(distinctList1);
 
         //2. Stream [Direct convert List to set using stream]
-        Set<Integer> distinctList2 = numbers
-                .stream()
+        Set<Integer> distinctList2 = numbers.stream()
                 .collect(Collectors.toSet());
 
         System.out.println(distinctList2);
