@@ -1,9 +1,7 @@
 package main.java.com.core;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Demo {
 
@@ -31,6 +29,14 @@ public class Demo {
         treeSet.add(30);
 
         System.out.println("treeSet" + treeSet);
+
+        List<Integer> numbers =
+                List.of(10, 15, 20, 25, 30, 35, 40);
+
+        //Get even numbers, multiply them by 2, sort them in descending order, take only the first 3, and store them in a new list.
+        Stream<Integer> limit = numbers.stream().filter(n -> n % 2 == 0).map(n -> n * 2).sorted(Comparator.reverseOrder()).limit(3);
+
+        System.out.println(limit.toList());
 
     }
 }

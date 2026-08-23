@@ -1,11 +1,12 @@
 package main.java.com.core;
 
-import java.util.Objects;
 
 public class Employee {
     private int id;
 
     private String name;
+
+    private double salary;
 
     public Employee(int id, String name) {
         this.id = id;
@@ -14,12 +15,20 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return "name : " + name + "---" + "salary" + salary;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -33,6 +42,11 @@ public class Employee {
 
         Employee other = (Employee) obj;
         return this.id == other.id;
+    }
+
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
     }
 
     @Override
