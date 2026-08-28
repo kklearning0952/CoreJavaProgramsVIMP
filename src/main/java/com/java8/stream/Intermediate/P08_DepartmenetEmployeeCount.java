@@ -2,10 +2,8 @@ package main.java.com.java8.stream.Intermediate;
 
 import main.java.com.core.Employee;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.io.BufferedReader;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,6 +28,7 @@ public class P08_DepartmenetEmployeeCount {
      Finance = 2,
      Operations =1
      */
+        System.out.println("Initial employess list : " + employess);
 
         List<String> list = employess.stream()
                 .collect(
@@ -43,5 +42,56 @@ public class P08_DepartmenetEmployeeCount {
 
         System.out.println(list);
 
+        //Max Salary
+        Optional<EmployeeClass> max = employess.stream()
+                .max(Comparator.comparingDouble(EmployeeClass::getSalary));
+
+        System.out.println("Max Salary : " + max.get());
+
+        //Min Salary
+        Optional<EmployeeClass> min = employess.stream()
+                .min(Comparator.comparingDouble(EmployeeClass::getSalary));
+
+        System.out.println("Min Salary : " + min.get());
+
+        //Print employee id and name and remove duplicate id and keep only latest value
+        Map<Integer, String> collect = employess.stream()
+                .collect(Collectors.toMap(EmployeeClass::getId,
+                        EmployeeClass::getName, (existing, duplicate) -> duplicate));
+        System.out.println(collect);
+
+        //Print total salary of all employees
+        Double totalSalary = employess.stream()
+                .collect(Collectors.summingDouble(EmployeeClass::getSalary));
+        System.out.println("Total salary of employees : " + totalSalary);
+
+        //OR
+        Double totalSalary1 = employess.stream()
+                .mapToDouble(EmployeeClass::getSalary)
+                .sum();
+        System.out.println("Total salary of employees : " + totalSalary1);
+
+        //Average salary of emploees
+        double averageSalary = employess.stream()
+                .mapToDouble(EmployeeClass::getSalary)
+                .average().orElse(0.0);
+
+        System.out.println("Average salary of employees : " + averageSalary);
+
+        //Find the names of the top 3 highest-paid employees
+        List<String> topThreeHighestSalary = employess.stream()
+                .sorted(Comparator.comparing(EmployeeClass::getSalary).reversed())
+                .limit(3)
+                .map(EmployeeClass::getName)
+                .toList();
+
+        System.out.println("Top 3 highest salary : " + topThreeHighestSalary);
+
+        Map<String, Long> collect1 = employess.stream()
+                .filter(emp -> emp.getSalary() > 50000)
+                .collect(Collectors.groupingBy(
+                        EmployeeClass::getDepartment,
+                        Collectors.counting()));
+        System.out.println(collect1);
     }
 }
