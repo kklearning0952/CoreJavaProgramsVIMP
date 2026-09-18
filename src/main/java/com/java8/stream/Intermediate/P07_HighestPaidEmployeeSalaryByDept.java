@@ -13,7 +13,7 @@ public class P07_HighestPaidEmployeeSalaryByDept {
                 new EmployeeClass(2, "Jane", "IT", 70000),
                 new EmployeeClass(3, "Mike", "IT", 80000),
                 new EmployeeClass(4, "Sara", "Finance", 60000),
-                new EmployeeClass(4, "Paul", "HR", 55000)
+                new EmployeeClass(5, "Paul", "HR", 55000)
         );
 
         /*

@@ -17,7 +17,20 @@ public class P05_CountOccurrences {
         //orange-1
         Map<String, Long> map = items.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
         System.out.println(map);
+
+        String[] itemsArray = {"apple", "banana", "apple", "orange", "banana", "apple"};
+        //apple -3
+        //banana -2
+        //orange-1
+        Map<String, Long> map1 = Arrays.asList(itemsArray).stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        System.out.println(map1);
+
+        Map<String, Long> map2 = Arrays.stream(itemsArray)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        System.out.println(map2);
     }
 }

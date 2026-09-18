@@ -15,7 +15,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "name : " + name + "---" + "salary" + salary;
+        return name + "-" + salary;
     }
 
     public double getSalary() {
