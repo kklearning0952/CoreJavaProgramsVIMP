@@ -21,7 +21,7 @@ public class Demo2 {
 
         System.out.println(map.putIfAbsent("TXN1", "PROCESSING")); //null
         System.out.println(map.putIfAbsent("TXN1", "COMPLETED")); //PROCESSING
-        System.out.println(map.putIfAbsent("TXN1", "KK")); //COMPLETED
+        System.out.println(map.putIfAbsent("TXN1", "KK")); //PROCESSING
         System.out.println(map);
 
         // Creates a pool with 2 worker threads
