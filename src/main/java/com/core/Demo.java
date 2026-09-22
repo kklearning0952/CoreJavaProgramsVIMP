@@ -12,6 +12,7 @@ public class Demo {
         set.add(10);
         set.add(20);
         set.add(30);
+        set.add(null);//null allowed in Set
 
         System.out.println("set" + set);
 
