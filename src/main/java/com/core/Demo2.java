@@ -3,6 +3,7 @@ package main.java.com.core;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.SortedMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -47,6 +48,7 @@ public class Demo2 {
 
         String name="SUCCESS";
         Optional<Map.Entry<Character, Long>> first = name.chars().mapToObj(ch -> (char) ch).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(map5 -> map5.getValue() == 1).findFirst();
+        System.out.println("First No repeated character : " + first);
 
 
     }
