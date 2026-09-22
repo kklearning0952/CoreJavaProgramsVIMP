@@ -6,7 +6,7 @@ import java.util.Map;
 public class HashMapDemo {
     public static void main(String[] args) {
         Employee emp1 = new Employee(101, "Kiran");
-        Employee emp2 = new Employee(101, "Kiran");
+        Employee emp2 = new Employee(101, "Amar");
 
         Map<Employee, String> employees = new HashMap<>();
 
