@@ -18,7 +18,7 @@ public class Sample {
                 List.of("Docker", "Java")
         );
 
-        Set<String> collect = skills.stream().flatMap(List::stream).distinct().collect(Collectors.toSet());
+        Set<String> collect = skills.stream().flatMap(List::stream).collect(Collectors.toSet());
 
         System.out.println(collect);
 
