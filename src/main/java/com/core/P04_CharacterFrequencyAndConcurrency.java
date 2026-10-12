@@ -3,14 +3,13 @@ package main.java.com.core;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.SortedMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Demo2 {
+public class P04_CharacterFrequencyAndConcurrency {
 
     public static void main(String[] args) {
         String str = "programming";
@@ -47,7 +46,7 @@ public class Demo2 {
         executor.shutdown();
 
         String name="SUCCESS";
-        Optional<Map.Entry<Character, Long>> first = name.chars().mapToObj(ch -> (char) ch).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(map5 -> map5.getValue() == 1).findFirst();
+        Optional<Map.Entry<Character, Long>> first = name.chars().mapToObj(ch -> (char) ch).collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new, Collectors.counting())).entrySet().stream().filter(map5 -> map5.getValue() == 1).findFirst();
         System.out.println("First No repeated character : " + first);
 
 
