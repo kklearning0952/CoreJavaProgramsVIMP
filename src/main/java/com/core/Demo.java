@@ -12,7 +12,7 @@ public class Demo {
         set.add(10);
         set.add(20);
         set.add(30);
-        set.add(null);//null allowed in Set
+        set.add(null);
 
         System.out.println("set" + set);
 
@@ -21,6 +21,7 @@ public class Demo {
         linkedHashSet.add(20);
         linkedHashSet.add(10);
         linkedHashSet.add(30);
+        linkedHashSet.add(null);
         System.out.println("linkedHashSet" + linkedHashSet);
 
         Set<Integer> treeSet = new TreeSet<>();
@@ -28,6 +29,7 @@ public class Demo {
         treeSet.add(10);
         treeSet.add(20);
         treeSet.add(30);
+        //treeSet.add(null); null is not allowed in TreeSet
 
         System.out.println("treeSet" + treeSet);
 
