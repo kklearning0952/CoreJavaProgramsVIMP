@@ -11,7 +11,7 @@ public class P02_FindAverag {
 
         double average = numbers
                             .stream()
-                            .mapToInt(Integer::intValue)
+                            .mapToInt(Integer::intValue)//n -> n
                             .average()
                             .orElse(0.0);
 
