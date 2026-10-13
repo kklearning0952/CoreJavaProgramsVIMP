@@ -12,13 +12,15 @@ public class P12_FirstNoRepeatedCharacterInString {
         String input = "swiss";
 
 
-        Optional<Map.Entry<Character, Long>> first = input.chars()
+        Map first=input.chars()
                 .mapToObj(ch -> (char) ch).
                 collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
                 .entrySet()
                 .stream()
                 .filter(entry -> entry.getValue() == 1)
-                .findFirst();
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,Map.Entry::getValue
+                ));
 
         System.out.println(first);
     }
